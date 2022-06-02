@@ -1,12 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
-	var kata string
+	// var kata string
 	fmt.Print("Masukkan kata: ")
-	fmt.Scan(&kata)
-	result := palindrome(kata)
+	// fmt.Scan(&kata)
+	b := bufio.NewScanner(os.Stdin)
+	b.Scan()
+	result := palindrome(b.Text())
 	if result == true {
 		fmt.Println("Palindrome")
 	} else {
